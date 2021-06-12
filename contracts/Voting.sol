@@ -1,95 +1,115 @@
-pragma solidity >=0.4.22 <0.9.0;
+pragma solidity >=0.4.25 <0.7.0;
 
-   
-    struct Voter {
-        uint weight; 
-        bool voted; 
-        address delegate;
-        uint vote;
-    }
+// address - содержит в себе 20 byte (размер ETH адреса)
+// memory - то что мы храним в памяти (какое-то значение)
 
-    struct Proposal {
-        bytes32 name;  
-        uint voteCount; 
-    }
+contract Voting{
 
-    address public chairperson;
+struct vote {
+    string VoterAddres;
+    bool choice;
+}
 
-    mapping(address => Voter) public voters;
+struct voter{
+    string VoterName;
+    bool voted;
+}
 
-    Proposal[] public proposals;
+uint private CountResult = 0;
+uint public FinalResult = 0;
+uint public TotalVoter = 0;
+uint public TotalVote = 0;
 
-    constructor(bytes32[] proposalNames) public {
-        chairperson = msg.sender;
-        voters[chairperson].weight = 1;
 
-        for (uint i = 0; i < proposalNames.length; i++) {
+address public BallotOfficialAddress;
+string public BallotOfficialName;
+string public proposal;
 
-            proposals.push(Proposal({
-                name: proposalNames[i],
-                voteCount: 0
-            }));
-        }
-    }
+mapping(uint => vote) private votes;
+mapping(address => voter) public VoterRegister;
 
-    function giveRightToVote(address voter) public {
-        require(
-            msg.sender == chairperson,
-            "Only chairperson can give right to vote."
-        );
-        require(
-            !voters[voter].voted,
-            "The voter already voted."
-        );
-        require(voters[voter].weight == 0);
-        voters[voter].weight = 1;
-    }
+enum State{
+    Created,
+    Voting,
+    Ended
+}
+State public state;
 
-    function delegate(address to) public {
 
-        Voter storage sender = voters[msg.sender];
-        require(!sender.voted, "You already voted.");
+//MODIFIERS
 
-        require(to != msg.sender, "Self-delegation is disallowed.");
+modifier condition(bool _condition){
+    require(_condition);
+    _;
+}
 
-        while (voters[to].delegate != address(0)) {
-            to = voters[to].delegate;
+modifier onlyOfficial(){
+    require(msg.sender == BallotOfficialAddress);
+    _;
+}
 
-            require(to != msg.sender, "Found loop in delegation.");
-        }
-        sender.voted = true;
-        sender.delegate = to;
-        Voter storage delegate_ = voters[to];
-        if (delegate_.voted) {
-            proposals[delegate_.vote].voteCount += sender.weight;
-        } else {
-            delegate_.weight += sender.weight;
-        }
-    }
-    function vote(uint proposal) public {
-        Voter storage sender = voters[msg.sender];
-        require(!sender.voted, "Already voted.");
-        sender.voted = true;
-        sender.vote = proposal;
+modifier inState(State _state){
+    require(state == _state);
+    _;
+}
 
-        proposals[proposal].voteCount += sender.weight;
-    }
+//FUNCTIONS
 
-    function winningProposal() public view
-            returns (uint winningProposal_)
-    {
-        uint winningVoteCount = 0;
-        for (uint p = 0; p < proposals.length; p++) {
-            if (proposals[p].voteCount > winningVoteCount) {
-                winningVoteCount = proposals[p].voteCount;
-                winningProposal_ = p;
-            }
-        }
-    }
+constructor (string memory _BallotOfficialName, string memory _proposal) public{
+    BallotOfficialAddress = msg.sender;
+    BallotOfficialName = _BallotOfficialName;
+    proposal = _proposal;
 
-    function winnerName() public view
-            returns (bytes32 winnerName_)
-    {
-        winnerName_ = proposals[winningProposal()].name;
-    }
+    state = State.Created;
+
+}
+
+ function addVoter(address _VoterAddres,string memory _VoterName) 
+     public 
+     inState(State.Created)
+     onlyOfficial
+ {
+     voter memory v;
+     v.VoterName = _VoterName;
+     v.voted = false;
+     VoterRegister[_VoterAddres] = v;
+     ++TotalVoter;
+ }
+ 
+ function startVote() 
+    public 
+    inState(State.Created)
+    onlyOfficial
+ {
+     state = State.Voting;
+ }
+  function doVote(bool _choice)
+    public 
+    inState(State.Voting)
+    returns (bool voted)
+  {
+      bool found = false;
+      if(bytes(VoterRegister[msg.sender].VoterName).length != 0 && !VoterRegister[msg.sender].voted){
+          VoterRegister[msg.sender].voted = true;
+          vote memory v;
+          v.choice = _choice;
+          if(_choice){
+              ++CountResult;
+          }
+          votes[TotalVote] = v;
+          ++TotalVote;
+          found = true;
+      }
+      return found;
+  }
+
+  function endVote()
+    public
+    inState(State.Voting)
+    onlyOfficial
+  {
+      state = State.Ended;
+      FinalResult = CountResult;
+  }
+
 }

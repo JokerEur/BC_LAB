@@ -69,15 +69,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"int256\",\"name\":\"a\",\"type\":\"int256\"},{\"internalType\":\"int256\",\"name\":\"b\",\"type\":\"int256\"}],\"name\":\"Add\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"LastOperation\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"int256\",\"name\":\"a\",\"type\":\"int256\"},{\"internalType\":\"int256\",\"name\":\"b\",\"type\":\"int256\"}],\"name\":\"Subtract\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ivan/Desktop/BC_LAB/contracts/Calculator.sol\":\"Calculator\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ivan/Desktop/BC_LAB/contracts/Calculator.sol\":{\"keccak256\":\"0x2429fca55562e1cbfeb3d835af8207c09b18cbd18ea0eeebd6bed4ca9c312cbb\",\"urls\":[\"bzz-raw://769aa730d739c1c3b1737bb5ef0c79ee732c6b301acf9258413d043ee9bb79a4\",\"dweb:/ipfs/QmUqjgmgHbpgZ2C1ZySyXuyyxJwgmDzbVn8Z888pr44sid\"]}},\"version\":1}",
-  "bytecode": "0x60806040526000805534801561001457600080fd5b50610166806100246000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80633e21f39614610046578063830fb67c14610092578063d3507d71146100de575b600080fd5b61007c6004803603604081101561005c57600080fd5b8101908080359060200190929190803590602001909291905050506100fc565b6040518082815260200191505060405180910390f35b6100c8600480360360408110156100a857600080fd5b810190808035906020019092919080359060200190929190505050610112565b6040518082815260200191505060405180910390f35b6100e6610128565b6040518082815260200191505060405180910390f35b6000818303600081905550600054905092915050565b6000818301600081905550600054905092915050565b6000805490509056fea265627a7a7231582069fdcbef7f3fc8eebcc9f88479d1f7699400b3afde1dc40c4cac5e0d70f857c564736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80633e21f39614610046578063830fb67c14610092578063d3507d71146100de575b600080fd5b61007c6004803603604081101561005c57600080fd5b8101908080359060200190929190803590602001909291905050506100fc565b6040518082815260200191505060405180910390f35b6100c8600480360360408110156100a857600080fd5b810190808035906020019092919080359060200190929190505050610112565b6040518082815260200191505060405180910390f35b6100e6610128565b6040518082815260200191505060405180910390f35b6000818303600081905550600054905092915050565b6000818301600081905550600054905092915050565b6000805490509056fea265627a7a7231582069fdcbef7f3fc8eebcc9f88479d1f7699400b3afde1dc40c4cac5e0d70f857c564736f6c63430005100032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"int256\",\"name\":\"a\",\"type\":\"int256\"},{\"internalType\":\"int256\",\"name\":\"b\",\"type\":\"int256\"}],\"name\":\"Add\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"LastOperation\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"int256\",\"name\":\"a\",\"type\":\"int256\"},{\"internalType\":\"int256\",\"name\":\"b\",\"type\":\"int256\"}],\"name\":\"Subtract\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/ivanvologin/Documents/UNI/programming/BC_LAB/contracts/Calculator.sol\":\"Calculator\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/ivanvologin/Documents/UNI/programming/BC_LAB/contracts/Calculator.sol\":{\"keccak256\":\"0x2429fca55562e1cbfeb3d835af8207c09b18cbd18ea0eeebd6bed4ca9c312cbb\",\"urls\":[\"bzz-raw://769aa730d739c1c3b1737bb5ef0c79ee732c6b301acf9258413d043ee9bb79a4\",\"dweb:/ipfs/QmUqjgmgHbpgZ2C1ZySyXuyyxJwgmDzbVn8Z888pr44sid\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000805534801561001457600080fd5b50610166806100246000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80633e21f39614610046578063830fb67c14610092578063d3507d71146100de575b600080fd5b61007c6004803603604081101561005c57600080fd5b8101908080359060200190929190803590602001909291905050506100fc565b6040518082815260200191505060405180910390f35b6100c8600480360360408110156100a857600080fd5b810190808035906020019092919080359060200190929190505050610112565b6040518082815260200191505060405180910390f35b6100e6610128565b6040518082815260200191505060405180910390f35b6000818303600081905550600054905092915050565b6000818301600081905550600054905092915050565b6000805490509056fea265627a7a723158204f1cb44babc9154bd385c07302f8c78f7281cb60696288b546527357ec71333164736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80633e21f39614610046578063830fb67c14610092578063d3507d71146100de575b600080fd5b61007c6004803603604081101561005c57600080fd5b8101908080359060200190929190803590602001909291905050506100fc565b6040518082815260200191505060405180910390f35b6100c8600480360360408110156100a857600080fd5b810190808035906020019092919080359060200190929190505050610112565b6040518082815260200191505060405180910390f35b6100e6610128565b6040518082815260200191505060405180910390f35b6000818303600081905550600054905092915050565b6000818301600081905550600054905092915050565b6000805490509056fea265627a7a723158204f1cb44babc9154bd385c07302f8c78f7281cb60696288b546527357ec71333164736f6c63430005100032",
   "sourceMap": "66:407:0:-;;;118:1;94:25;;66:407;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:407:0;;;;;;;",
   "deployedSourceMap": "66:407:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:407:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;250:119;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;250:119:0;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;128:114;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;128:114:0;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;381:88;;;:::i;:::-;;;;;;;;;;;;;;;;;;;250:119;298:3;331:1;327;:5;315:9;:17;;;;351:9;;344:16;;250:119;;;;:::o;128:114::-;171:3;204:1;200;:5;188:9;:17;;;;224:9;;217:16;;128:114;;;;:::o;381:88::-;427:3;451:9;;444:16;;381:88;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract Calculator {  \n    int private lastValue = 0;  \n\n    function Add(int a, int b) public returns (int) {  \n        lastValue = a + b;  \n        return lastValue;  \n    }  \n\n    function Subtract(int a, int b) public returns (int) {  \n        lastValue = a - b;  \n        return lastValue;  \n    }  \n    \n    function LastOperation() public view returns (int) {  \n        return lastValue;  \n    }  \n}  ",
-  "sourcePath": "/home/ivan/Desktop/BC_LAB/contracts/Calculator.sol",
+  "sourcePath": "/Users/ivanvologin/Documents/UNI/programming/BC_LAB/contracts/Calculator.sol",
   "ast": {
-    "absolutePath": "/home/ivan/Desktop/BC_LAB/contracts/Calculator.sol",
+    "absolutePath": "/Users/ivanvologin/Documents/UNI/programming/BC_LAB/contracts/Calculator.sol",
     "exportedSymbols": {
       "Calculator": [
         49
@@ -664,7 +664,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/home/ivan/Desktop/BC_LAB/contracts/Calculator.sol",
+      "absolutePath": "/Users/ivanvologin/Documents/UNI/programming/BC_LAB/contracts/Calculator.sol",
       "exportedSymbols": {
         "Calculator": [
           49
@@ -1320,12 +1320,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x75fD80d9147d93508465c777c76dDC6963eD9827",
-      "transactionHash": "0xee1de0137ddeb61c23e2fdd83d9d54b2f416856cb423462b7517f4fa0133f654"
+      "address": "0xF6bec895E79C38cb029c9D4C533F1a7b04Ccc4f3",
+      "transactionHash": "0x1809dbc29a111f0c2aa05d3f8cc40aa5437ea93c460c391bd67f5306b8a0b68e"
     }
   },
-  "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-22T18:23:05.640Z",
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-06-12T09:47:12.743Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
